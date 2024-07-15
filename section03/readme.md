@@ -48,7 +48,24 @@ export default function NewsDetailPage({ params }) {
 
 - 병렬 라우팅을 설정하려면 병렬 라우트를 포함하는 경로에 `layout.js` 파일을 추가해야한다.
 - 또한, 병렬 라우트마다 이름이 `@`로 시작하는 하위폴더 하나를 추가한다.
+- `layout` 컴포넌트에서는 `children` 속성을 통해서 액세스할 수 있는데, 병렬 라우트에서는 `@` 기호로 시작하는 폴더와 동일한 이름을 가지는 속성으로 사용가능하다.
+  - ex) `@archive` 폴더일경우, `archive`로 접근가능
 
+
+![image](https://github.com/user-attachments/assets/29291978-b361-443a-94da-890a114b46c5)
+
+
+ ```javascript
+export default function ArchiveLayout({ archive, latest }) {
+  return (
+    <div>
+      <h1>News Archive</h1>
+      <section id="archive-filter">{archive}</section>
+      <section id="archive-latest">{latest}</section>
+    </div>
+  );
+}
+```
 
 
 
