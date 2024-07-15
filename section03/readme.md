@@ -42,4 +42,13 @@ export default function NewsDetailPage({ params }) {
     </article>
   );
 }
-```  
+```
+
+## 병렬 라우트 설정 및 사용
+
+- 병렬 라우팅을 설정하려면 병렬 라우트를 포함하는 경로에 `layout.js` 파일을 추가해야한다.
+- 또한, 병렬 라우트마다 이름이 `@`로 시작하는 하위폴더 하나를 추가한다.
+
+
+
+
