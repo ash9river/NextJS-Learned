@@ -67,5 +67,24 @@ export default function ArchiveLayout({ archive, latest }) {
 }
 ```
 
+- 병렬 라우트를 다룰 때, 동일한 페이지에 표시되는 병렬 라우트는 전부 원하는 경로를 모두 지원해야 합니다.
+- 병렬 라우트에서 만약 한 라우트만 경로를 이동하고, 다른 페이지는 이동하고 싶지 않으면 `default.js` 파일을 만들면 된다.
+- `default` 파일은 병렬 라우트에서 현재 로딩된 경로에 대해 구체적인 콘텐츠가 없다면 표시할 기본 `fallback` 콘텐츠를 정의하도록 허용하는 파일이다.
+
+![image](https://github.com/user-attachments/assets/5da618e9-5159-45b7-8046-b81d8c267360)
 
 
+```javascript
+import NewsList from "@/components/news-list";
+import { getLatestNews } from "@/lib/news";
+
+export default function LatestNewsPage() {
+  const latestNews = getLatestNews();
+  return (
+    <>
+      <h1>Latest News</h1>
+      <NewsList news={latestNews} />
+    </>
+  );
+}
+```
